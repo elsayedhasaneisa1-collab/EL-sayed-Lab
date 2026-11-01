@@ -20,16 +20,16 @@ export function HomePage({
           <div className="space-y-5">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-200">
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 pulse-glow" />
-              منهج الثانوية العامة المصرية — الصف الثالث
+              اهلا بك في مختبري نورت المختبر كلو 🙂
             </div>
             <h1 className="text-4xl font-black leading-tight text-white md:text-6xl">
-              Sayed Lab
+              EL-sayed Lab
               <span className="mt-2 block bg-gradient-to-l from-cyan-300 to-amber-300 bg-clip-text text-transparent">
-                مختبر سيد
+                مختبر السيد
               </span>
             </h1>
             <p className="max-w-xl text-lg leading-8 text-slate-300">
-              منصة تجارب تفاعلية للكيمياء والفيزياء: معايرة، خلايا جلفانية، ظاهرة كهروضوئية، تداخل يونج، ونموذج بور — كما في لجنة الامتحان، لكن بين يديك الآن.
+              موقع تجارب تفاعلي للفيزياء والكيمياء من انشاء الطالب السيد حسن عيسى
             </p>
             <div className="flex flex-wrap gap-3">
               <button onClick={() => go("chem")} className="rounded-2xl bg-cyan-400 px-6 py-3 font-bold text-slate-950 shadow-[0_0_30px_rgba(34,211,238,0.35)]">
@@ -465,10 +465,10 @@ export function AboutPage() {
   return (
     <div className="grid gap-6 lg:grid-cols-2">
       <div className="space-y-4">
-        <p className="text-xs tracking-[0.4em] text-cyan-400">SAYED LAB</p>
+        <p className="text-xs tracking-[0.4em] text-cyan-400">EL-sayed LAB</p>
         <h2 className="text-4xl font-black">مختبر رقمي بمعايير لجنة الثانوية</h2>
         <p className="leading-8 text-slate-300">
-          Sayed Lab منصة تعليمية صُممت لطالب الصف الثالث الثانوي المصري. تجمع المحاكاة الحية والجدول الدوري والحاسبات والاختبارات في واجهة واحدة بالعربية، مع الالتزام بمصطلحات الوزارة: مصعد ومهبط، دالة الشغل، هدب التداخل، ونصف العمر.
+          EL-sayed Lab منصة تعليمية صُممت لطالب الصف الثالث الثانوي تجمع المحاكاة الحية والجدول الدوري والحاسبات والاختبارات في واجهة واحدة بالعربية، مع الالتزام بمصطلحات الوزارة: مصعد ومهبط، دالة الشغل، هدب التداخل، ونصف العمر.
         </p>
         <ul className="space-y-2 text-sm text-slate-400">
           <li>• تجارب كيمياء: معايرة، لهب، تحليل كهربي، دانيال، كواشف، حركية.</li>

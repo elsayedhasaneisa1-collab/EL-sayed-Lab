@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050b1b">
+  <meta name="robots" content="noindex, nofollow">
+  <title>404 | مختبر السيد للكيمياء والفيزياء</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+    :root{--cyan:#00e5ff;--blue:#287bff;--violet:#8b5cf6;--gold:#ffc928;--bg:#050b1b}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;overflow-x:hidden;display:grid;place-items:center;padding:28px 16px;color:#eef7ff;font-family:"Cairo",Tahoma,Arial,sans-serif;background:radial-gradient(ellipse at 50% 35%,#102b60 0%,#08152f 38%,var(--bg) 78%);position:relative}
+    body:before,body:after{content:"";position:fixed;inset:0;pointer-events:none}
+    body:before{opacity:.16;background-image:linear-gradient(rgba(0,229,255,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.18) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+    body:after{background:radial-gradient(circle at 15% 20%,#1a64ff22,transparent 28%),radial-gradient(circle at 85% 75%,#8b5cf622,transparent 30%)}
+    .orb{position:fixed;border:1px solid #00d9ff33;border-radius:50%;filter:drop-shadow(0 0 12px #00d9ff55);animation:float 7s ease-in-out infinite;pointer-events:none}
+    .orb.one{width:110px;height:110px;top:12%;left:8%}.orb.two{width:60px;height:60px;right:10%;bottom:16%;animation-delay:-3s}
+    .wrap{width:min(900px,100%);text-align:center;position:relative;z-index:1}
+    .lab-tag{display:inline-flex;align-items:center;gap:10px;color:#8defff;border:1px solid #00dfff55;background:#071c35aa;border-radius:30px;padding:8px 18px;font-size:13px;letter-spacing:.4px;box-shadow:0 0 24px #00dfff17}
+    .lab-tag .atom{font-size:20px;color:var(--cyan);animation:spin 12s linear infinite}
+    .scene{height:290px;position:relative;display:grid;place-items:center;margin:8px auto 0}
+    .halo{position:absolute;width:280px;height:280px;border-radius:50%;border:1px solid #00dfff30;box-shadow:0 0 60px #007bff22,inset 0 0 50px #007bff12;animation:pulse 3s ease-in-out infinite}
+    .halo:before,.halo:after{content:"";position:absolute;border:1px dashed #00dfff50;border-radius:50%;inset:22px;transform:rotateX(65deg)}
+    .halo:after{inset:45px;transform:rotateY(65deg)}
+    .flask{position:absolute;width:118px;height:174px;top:18px;left:50%;transform:translateX(-50%);filter:drop-shadow(0 0 18px #00cfff88);z-index:2}
+    .flask-neck{position:absolute;top:0;left:43px;width:32px;height:55px;border:3px solid #9cefff;border-bottom:0;border-radius:7px 7px 0 0;background:linear-gradient(90deg,#0a2d56aa,#55eaff22,#0a2d56aa)}
+    .flask-neck:before{content:"";position:absolute;top:-5px;left:-8px;width:42px;height:8px;border:2px solid #b9f7ff;border-radius:5px;background:#164b75}
+    .glass{position:absolute;left:4px;top:48px;width:110px;height:119px;clip-path:polygon(35% 0,65% 0,65% 20%,98% 91%,94% 100%,6% 100%,2% 91%,35% 20%);border:0;background:linear-gradient(90deg,#78eaff88,#d8ffff22 28%,#00bfff44 70%,#74eaff88);overflow:hidden}
+    .glass:before{content:"";position:absolute;inset:4px;background:linear-gradient(110deg,#ffffff28,transparent 35%,#00d9ff12 70%,#ffffff20)}
+    .liquid{position:absolute;bottom:5px;left:8px;right:8px;height:62px;background:linear-gradient(180deg,#00e5ff99,#0876ffbb);clip-path:polygon(0 12%,100% 0,100% 100%,0 100%);animation:liquid 3s ease-in-out infinite}
+    .bubble{position:absolute;bottom:13px;width:7px;height:7px;border:1px solid #c6fbff;border-radius:50%;background:#b5faff88;animation:bubble 2.8s linear infinite}
+    .b1{left:35px}.b2{left:60px;animation-delay:.9s;width:5px;height:5px}.b3{left:76px;animation-delay:1.5s;width:9px;height:9px}
+    .flask-base{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:180px;height:10px;border-radius:50%;background:#00dfff44;box-shadow:0 0 30px #00dfff99}
+    .electric{position:absolute;width:260px;height:150px;top:65px;left:50%;transform:translateX(-50%);z-index:3;pointer-events:none}
+    .bolt{position:absolute;color:#8af7ff;font-size:34px;text-shadow:0 0 8px #00dfff,0 0 24px #008cff;animation:zap 1.7s steps(2,end) infinite}
+    .bolt.left{left:8px;top:40px}.bolt.right{right:5px;top:12px;animation-delay:.5s}.bolt.bottom{right:28px;bottom:0;font-size:23px;animation-delay:1s}
+    .number{font-size:clamp(92px,17vw,158px);font-weight:900;line-height:1;letter-spacing:5px;margin-top:-4px;background:linear-gradient(180deg,#fff 4%,#8beeff 42%,#187aff 85%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 10px 36px #008cff55;filter:drop-shadow(0 0 16px #008cff55)}
+    .number span{display:inline-block;animation:float 4s ease-in-out infinite}
+    .number span:nth-child(2){animation-delay:-1.5s;color:var(--gold);-webkit-text-fill-color:var(--gold);filter:drop-shadow(0 0 18px #ffbf36)}
+    h1{font-size:clamp(22px,4vw,34px);margin:12px 0 8px;font-weight:800}
+    h1 em{font-style:normal;color:var(--gold);text-shadow:0 0 18px #ffbf3644}
+    p{margin:0 auto;color:#a9c7e8;font-size:15px;line-height:1.9;max-width:540px}
+    .actions{margin-top:26px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .home{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 25px;border-radius:40px;text-decoration:none;color:#001326;font-weight:800;background:linear-gradient(110deg,#8af5ff,#00cfff 55%,#398cff);box-shadow:0 0 25px #00cfff66, inset 0 1px #fff9;transition:.25s}
+    .home:hover{transform:translateY(-3px);box-shadow:0 0 38px #00cfffaa}
+    .back{display:inline-flex;align-items:center;justify-content:center;padding:11px 22px;border:1px solid #73dfff55;border-radius:40px;color:#b9eaff;text-decoration:none;background:#071a33aa;transition:.25s}
+    .back:hover{border-color:var(--cyan);background:#0b2b4a}
+    footer{margin-top:38px;color:#568bb9;font-size:12px;letter-spacing:1px;display:flex;align-items:center;justify-content:center;gap:12px}
+    footer:before,footer:after{content:"";height:1px;width:min(100px,15vw);background:linear-gradient(90deg,transparent,#00dfff88)}
+    footer:after{transform:rotate(180deg)}
+    @keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{50%{transform:scale(1.06);opacity:.65}}@keyframes float{50%{transform:translateY(-13px)}}@keyframes zap{0%,100%{opacity:.35;transform:scale(.85)}45%{opacity:1;transform:scale(1.2)}}@keyframes liquid{50%{height:72px;filter:hue-rotate(15deg)}}@keyframes bubble{0%{transform:translateY(0) scale(.7);opacity:0}20%{opacity:1}100%{transform:translateY(-55px) scale(1.15);opacity:0}}
+    @media(max-width:520px){.scene{height:245px}.halo{width:220px;height:220px}.flask{transform:translateX(-50%) scale(.86);transform-origin:top center}.electric{transform:translateX(-50%) scale(.8)}.number{margin-top:0}.orb.one{width:65px;height:65px}.orb.two{width:38px;height:38px}p{font-size:14px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="orb one"></div><div class="orb two"></div>
+  <main class="wrap">
+    <div class="lab-tag"><span class="atom">⚛</span><span>مختبر السيد للكيمياء والفيزياء</span></div>
+    <section class="scene" aria-hidden="true">
+      <div class="halo"></div>
+      <div class="flask">
+        <div class="flask-neck"></div>
+        <div class="glass"><div class="liquid"></div><i class="bubble b1"></i><i class="bubble b2"></i><i class="bubble b3"></i></div>
+        <div class="flask-base"></div>
+      </div>
+      <div class="electric"><span class="bolt left">ϟ</span><span class="bolt right">ϟ</span><span class="bolt bottom">ϟ</span></div>
+    </section>
+    <div class="number" aria-label="404"><span>4</span><span>0</span><span>4</span></div>
+    <h1>يبدو أنك دخلت <em>منطقة غير مكتشفة!</em></h1>
+    <p>التفاعل لم يصل إلى النتيجة المطلوبة... الصفحة التي تبحث عنها غير موجودة أو ربما تم نقلها.</p>
+    <div class="actions">
+      <a class="home" href="/">⌂ <span>العودة إلى الصفحة الرئيسية</span></a>
+      <a class="back" href="javascript:history.back()">الرجوع للصفحة السابقة</a>
+    </div>
+    <footer>CHEMISTRY &amp; PHYSICS LAB</footer>
+  </main>
+</body>
+</html>

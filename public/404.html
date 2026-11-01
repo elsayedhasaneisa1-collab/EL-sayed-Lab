@@ -1,292 +1,540 @@
 <!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050b1b">
-<title>404 | EL-sayed Lab</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#060914">
+<title>404 | EL-Sayed Lab</title><style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
 
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
 min-height:100vh;
+background:#060914;
+color:white;
+font-family:Cairo,Arial,sans-serif;
+overflow-x:hidden;
 display:flex;
 align-items:center;
 justify-content:center;
-overflow:hidden;
-padding:20px;
-font-family:Cairo,Tahoma,sans-serif;
-color:#fff;
-background:
-radial-gradient(ellipse at 50% 40%,#102b60,#050b1b 75%);
+position:relative;
 }
 
 body:before{
 content:"";
-position:fixed;
+position:absolute;
 inset:0;
-pointer-events:none;
 background-image:
-linear-gradient(#00dfff12 1px,transparent 1px),
-linear-gradient(90deg,#00dfff12 1px,transparent 1px);
-background-size:40px 40px;
-mask-image:linear-gradient(to bottom,#000,transparent);
+linear-gradient(#152c481c 1px,transparent 1px),
+linear-gradient(90deg,#152c481c 1px,transparent 1px);
+background-size:45px 45px;
+pointer-events:none;
 }
 
-.container{
-width:100%;
-max-width:700px;
-text-align:center;
-position:relative;
-z-index:1;
-}
-
-.badge{
-display:inline-block;
-padding:8px 20px;
-border:1px solid #00dfff66;
-border-radius:30px;
-color:#83edff;
-background:#071c35;
-font-size:13px;
-letter-spacing:1px;
-}
-
-.badge span{color:#00e5ff;font-size:20px}
-
-.scene{
-height:245px;
-position:relative;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.halo{
+.glow{
 position:absolute;
-width:220px;
-height:220px;
-border:1px solid #00dfff44;
+width:550px;
+height:550px;
 border-radius:50%;
-box-shadow:0 0 60px #008cff33,inset 0 0 40px #008cff22;
-animation:pulse 3s infinite;
+background:#073f8b30;
+filter:blur(100px);
+top:10%;
+left:20%;
+pointer-events:none;
 }
 
-.halo:before{
-content:"";
-position:absolute;
-inset:20px;
-border:1px dashed #00dfff66;
-border-radius:50%;
-}
-
-.flask{
+.wrapper{
+width:min(1200px,94%);
+min-height:650px;
 position:relative;
-width:120px;
-height:175px;
-filter:drop-shadow(0 0 20px #00dfff99);
 z-index:2;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:35px;
 }
 
-.neck{
+.visual{
+position:relative;
+height:560px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.lab{
 position:absolute;
-width:32px;
-height:60px;
-top:0;
-left:44px;
-border:3px solid #a4f4ff;
-border-bottom:0;
-border-radius:6px 6px 0 0;
-background:#164b7544;
+bottom:80px;
+width:90%;
+height:110px;
+border-radius:15px;
+background:linear-gradient(180deg,#192c49,#080e1d);
+border:1px solid #284d70;
+box-shadow:0 20px 50px #000a;
 }
 
-.neck:before{
+.lab:before{
 content:"";
 position:absolute;
-top:-6px;
-left:-8px;
-width:42px;
-height:8px;
-border:2px solid #b9f7ff;
-border-radius:5px;
-background:#164b75;
+top:-7px;
+width:100%;
+height:13px;
+background:#315477;
+border-radius:8px;
+box-shadow:0 0 20px #00bfff44;
 }
 
-.glass{
+.scientist{
 position:absolute;
-top:48px;
-width:120px;
-height:125px;
-clip-path:polygon(35% 0,65% 0,65% 20%,98% 91%,94% 100%,6% 100%,2% 91%,35% 20%);
-background:linear-gradient(90deg,#78eaff88,#d8ffff22,#00bfff55,#74eaff88);
-overflow:hidden;
+bottom:175px;
+width:270px;
+height:320px;
+z-index:3;
+animation:bodyMove 3s ease-in-out infinite;
 }
 
-.liquid{
+.head{
+position:absolute;
+top:20px;
+left:65px;
+width:145px;
+height:155px;
+background:#d9a77c;
+border-radius:48% 48% 43% 43%;
+z-index:3;
+box-shadow:inset -12px -8px 0 #ad795e;
+}
+
+.hair{
+position:absolute;
+top:-28px;
+left:-8px;
+width:160px;
+height:75px;
+background:#242b3a;
+border-radius:70% 40% 30% 20%;
+transform:rotate(-7deg);
+}
+
+.hair:before{
+content:"";
+position:absolute;
+top:-23px;
+left:35px;
+width:55px;
+height:65px;
+background:#242b3a;
+clip-path:polygon(50% 0,100% 100%,0 85%);
+}
+
+.hair:after{
+content:"";
+position:absolute;
+top:-10px;
+right:0;
+width:55px;
+height:65px;
+background:#242b3a;
+clip-path:polygon(40% 0,100% 100%,0 80%);
+}
+
+.eyebrow{
+position:absolute;
+top:64px;
+width:35px;
+height:8px;
+background:#30221e;
+border-radius:50%;
+}
+
+.eyebrow.left{left:24px;transform:rotate(-12deg)}
+.eyebrow.right{right:24px;transform:rotate(12deg)}
+
+.eye{
+position:absolute;
+top:82px;
+width:18px;
+height:18px;
+border-radius:50%;
+background:#152638;
+border:4px solid white;
+}
+
+.eye.left{left:34px}
+.eye.right{right:34px}
+
+.goggles{
+position:absolute;
+top:75px;
+left:12px;
+width:122px;
+height:34px;
+border:4px solid #92eaff;
+border-radius:12px;
+box-shadow:0 0 15px #00dfff;
+z-index:5;
+pointer-events:none;
+}
+
+.goggles:after{
+content:"";
+position:absolute;
+left:50%;
+top:0;
+height:100%;
+border-left:3px solid #92eaff;
+}
+
+.nose{
+position:absolute;
+top:92px;
+left:68px;
+width:15px;
+height:23px;
+border-right:3px solid #a36c54;
+border-radius:50%;
+}
+
+.mouth{
+position:absolute;
+bottom:22px;
+left:51px;
+width:42px;
+height:16px;
+border-bottom:5px solid #632d2b;
+border-radius:50%;
+}
+
+.bodycoat{
+position:absolute;
+top:160px;
+left:22px;
+width:225px;
+height:175px;
+background:linear-gradient(120deg,#e8f4f9,#9fb4c8);
+clip-path:polygon(20% 0,80% 0,100% 100%,0 100%);
+border-radius:20px 20px 0 0;
+}
+
+.bodycoat:before{
+content:"";
+position:absolute;
+left:48%;
+top:0;
+height:100%;
+border-left:3px solid #718da9;
+}
+
+.shirt{
+position:absolute;
+top:160px;
+left:111px;
+width:45px;
+height:90px;
+background:#152c4b;
+clip-path:polygon(0 0,100% 0,50% 100%);
+}
+
+.arm{
+position:absolute;
+top:185px;
+width:100px;
+height:27px;
+background:#d9a77c;
+border-radius:30px;
+transform-origin:right center;
+}
+
+.arm.left{
+left:-5px;
+transform:rotate(-30deg);
+animation:stir 2s ease-in-out infinite;
+}
+
+.arm.right{
+right:-8px;
+transform:rotate(15deg);
+}
+
+.hand{
+position:absolute;
+right:-12px;
+top:-5px;
+width:33px;
+height:33px;
+background:#d9a77c;
+border-radius:50%;
+}
+
+.beaker{
+position:absolute;
+width:95px;
+height:115px;
+bottom:100px;
+right:calc(50% - 170px);
+z-index:5;
+border:3px solid #a4efff;
+border-top:0;
+border-radius:5px 5px 20px 20px;
+background:#ffffff0c;
+box-shadow:0 0 20px #00dfff44;
+overflow:hidden;
+transform:rotate(-5deg);
+}
+
+.beaker:before{
+content:"";
+position:absolute;
+top:0;
+left:-5px;
+width:100px;
+border-top:4px solid #a4efff;
+}
+
+.chemical{
+position:absolute;
+bottom:0;
+width:100%;
+height:55%;
+background:linear-gradient(180deg,#54ffb7aa,#00aaffcc);
+animation:chemical 2s infinite ease-in-out;
+}
+
+.beaker i{
 position:absolute;
 bottom:5px;
-left:8px;
-right:8px;
-height:65px;
-background:linear-gradient(180deg,#00e5ff99,#0876ff);
-clip-path:polygon(0 12%,100% 0,100% 100%,0 100%);
-animation:liquid 3s infinite ease-in-out;
-}
-
-.bubble{
-position:absolute;
-bottom:12px;
+left:20px;
 width:8px;
 height:8px;
 border:1px solid white;
 border-radius:50%;
-animation:bubble 2.5s infinite linear;
+animation:bubbles 2s infinite;
 }
 
-.b1{left:30px}
-.b2{left:65px;animation-delay:.8s}
-.b3{left:85px;animation-delay:1.4s}
+.beaker i:nth-child(2){left:55px;animation-delay:.7s}
+.beaker i:nth-child(3){left:40px;animation-delay:1.2s}
 
 .bolt{
 position:absolute;
-color:#a4f8ff;
-font-size:40px;
-text-shadow:0 0 10px #00dfff,0 0 25px #008cff;
-animation:zap 1.5s infinite;
-z-index:3;
+color:#9ffcff;
+font-size:35px;
+text-shadow:0 0 15px #00e5ff;
+animation:flash 1s infinite;
 }
 
-.bolt.one{left:calc(50% - 145px);top:90px}
-.bolt.two{right:calc(50% - 145px);top:45px;animation-delay:.6s}
-.bolt.three{right:calc(50% - 125px);bottom:25px;animation-delay:1s}
+.bolt.a{top:90px;left:15%}
+.bolt.b{top:180px;right:12%;animation-delay:.5s}
+.bolt.c{bottom:160px;left:22%;animation-delay:.8s}
+
+.smoke{
+position:absolute;
+bottom:185px;
+right:calc(50% - 190px);
+width:100px;
+height:100px;
+background:#72eaff;
+border-radius:50%;
+filter:blur(35px);
+opacity:.25;
+animation:smoke 3s infinite;
+}
+
+.content{
+text-align:right;
+padding:30px;
+}
+
+.brand{
+display:inline-flex;
+align-items:center;
+gap:10px;
+color:#70eaff;
+font-size:14px;
+font-weight:700;
+letter-spacing:1px;
+}
+
+.brand span{
+font-size:27px;
+}
 
 .number{
-font-size:clamp(100px,18vw,150px);
+font-size:clamp(110px,15vw,180px);
 font-weight:900;
-line-height:1;
-letter-spacing:5px;
-background:linear-gradient(180deg,#fff,#75eaff 50%,#1674ff);
+line-height:1.15;
+direction:ltr;
+background:linear-gradient(180deg,#fff,#4acbff 55%,#1558d9);
 -webkit-background-clip:text;
 color:transparent;
-filter:drop-shadow(0 0 15px #008cff77);
+filter:drop-shadow(0 0 20px #008cff55);
 }
 
 .number span:nth-child(2){
-color:#ffc928;
--webkit-text-fill-color:#ffc928;
-filter:drop-shadow(0 0 15px #ffbf36);
+color:#b4ff70;
+-webkit-text-fill-color:#b4ff70;
 }
 
 h1{
-font-size:clamp(22px,4vw,32px);
-margin:15px 0 8px;
+font-size:clamp(25px,3vw,37px);
 font-weight:900;
+margin:15px 0;
 }
 
-h1 em{
-font-style:normal;
-color:#ffc928;
+h1 span{color:#b7ff65}
+
+.description{
+color:#94a8c7;
+font-size:15px;
+line-height:2.1;
+max-width:450px;
 }
 
-p{
-color:#a9c7e8;
-font-size:14px;
-line-height:2;
-max-width:500px;
-margin:auto;
+.status{
+margin-top:25px;
+display:flex;
+align-items:center;
+gap:10px;
+color:#a8ffbd;
+font-size:12px;
+}
+
+.status i{
+width:8px;
+height:8px;
+border-radius:50%;
+background:#4aff8b;
+box-shadow:0 0 12px #4aff8b;
+animation:flash 1s infinite;
 }
 
 .actions{
-margin-top:25px;
 display:flex;
-justify-content:center;
 gap:12px;
+margin-top:30px;
 flex-wrap:wrap;
 }
 
 a{
 text-decoration:none;
-padding:12px 24px;
-border-radius:35px;
+padding:13px 25px;
+border-radius:10px;
 font-weight:800;
+font-size:14px;
 transition:.3s;
 }
 
 .home{
-color:#001326;
-background:linear-gradient(110deg,#8af5ff,#00cfff,#398cff);
-box-shadow:0 0 25px #00cfff66;
+color:#04101b;
+background:linear-gradient(100deg,#8bffbc,#3bcfff);
+box-shadow:0 0 25px #00dfff33;
 }
 
 .back{
-color:#b9eaff;
-border:1px solid #73dfff66;
-background:#071a33;
+color:#b9d8f2;
+border:1px solid #335577;
+background:#0c1729;
 }
 
-a:hover{transform:translateY(-4px);box-shadow:0 0 30px #00dfff88}
+a:hover{transform:translateY(-4px);filter:brightness(1.2)}
 
 footer{
-margin-top:35px;
+margin-top:50px;
 font-size:11px;
-color:#568bb9;
+color:#486783;
 letter-spacing:3px;
 }
 
-@keyframes pulse{
-50%{transform:scale(1.08);opacity:.6}
+@keyframes bodyMove{
+50%{transform:translateY(-5px)}
 }
 
-@keyframes liquid{
-50%{height:75px}
+@keyframes stir{
+0%,100%{transform:rotate(-30deg)}
+50%{transform:rotate(-65deg)}
 }
 
-@keyframes bubble{
+@keyframes chemical{
+50%{height:65%;filter:hue-rotate(40deg)}
+}
+
+@keyframes bubbles{
 0%{transform:translateY(0);opacity:0}
-20%{opacity:1}
-100%{transform:translateY(-55px);opacity:0}
+30%{opacity:1}
+100%{transform:translateY(-70px);opacity:0}
 }
 
-@keyframes zap{
-0%,100%{opacity:.3;transform:scale(.8)}
-50%{opacity:1;transform:scale(1.2)}
+@keyframes flash{
+0%,100%{opacity:.3}
+50%{opacity:1}
 }
 
-@media(max-width:480px){
-.scene{height:220px}
-.halo{width:190px;height:190px}
-.flask{transform:scale(.85)}
-p{font-size:13px}
+@keyframes smoke{
+50%{transform:translateY(-35px) scale(1.4);opacity:.08}
+}
+
+@media(max-width:800px){
+.wrapper{
+grid-template-columns:1fr;
+gap:0;
+padding:25px 0;
+}
+
+.visual{
+height:410px;
+order:2;
+}
+
+.content{
+text-align:center;
+order:1;
+padding:15px;
+}
+
+.description{margin:auto}
+.status{justify-content:center}
+.actions{justify-content:center}
+.number{font-size:115px}
+.scientist{transform:scale(.85);transform-origin:bottom center;bottom:120px}
+.beaker{bottom:65px}
+.smoke{bottom:150px}
+footer{margin-top:30px}
 }
 
 @media(prefers-reduced-motion:reduce){
-*,*::before,*::after{animation:none!important;transition:none!important}
+*,*::before,*::after{
+animation:none!important;
+transition:none!important;
 }
-</style></head><body><main class="container"><div class="badge">
+}
+</style></head><body><div class="glow"></div><main class="wrapper"><section class="content"><div class="brand">
 <span>⚛</span>
-EL-SAYED CHEMISTRY & PHYSICS LAB
-</div><section class="scene"><div class="halo"></div><div class="flask">
-<div class="neck"></div>
-<div class="glass">
-<div class="liquid"></div>
-<i class="bubble b1"></i>
-<i class="bubble b2"></i>
-<i class="bubble b3"></i>
-</div>
-</div><div class="bolt one">ϟ</div>
-<div class="bolt two">ϟ</div>
-<div class="bolt three">ϟ</div></section><div class="number">
+EL-SAYED LAB
+</div><div class="number">
 <span>4</span><span>0</span><span>4</span>
 </div><h1>
-يبدو أنك دخلت
-<em>منطقة غير مكتشفة!</em>
-</h1><p>
-التفاعل لم يصل إلى النتيجة المطلوبة...
-الصفحة التي تبحث عنها غير موجودة أو ربما تم نقلها.
-</p><div class="actions">
+يا لها من تجربة <span>فاشلة!</span>
+</h1><p class="description">
+يبدو أن العالم المجنون انشغل بتجاربه ونسي إخبارنا بمكان الصفحة!
+المعادلة غير مكتملة... والصفحة التي تبحث عنها غير موجودة.
+</p><div class="status">
+<i></i>
+المختبر يعمل... التجربة مستمرة
+</div><div class="actions">
 <a href="/" class="home">⌂ العودة للرئيسية</a>
-<a href="javascript:history.back()" class="back">الرجوع للخلف</a>
-</div><footer>
-CHEMISTRY & PHYSICS LAB
-</footer></main></body>
+<a href="javascript:history.back()" class="back">العودة للخلف</a>
+</div><footer>CHEMISTRY & PHYSICS LABORATORY</footer></section><section class="visual"><div class="bolt a">ϟ</div>
+<div class="bolt b">ϟ</div>
+<div class="bolt c">ϟ</div><div class="smoke"></div><div class="scientist"><div class="head"><div class="hair"></div><div class="eyebrow left"></div>
+<div class="eyebrow right"></div><div class="eye left"></div>
+<div class="eye right"></div><div class="goggles"></div>
+<div class="nose"></div>
+<div class="mouth"></div></div><div class="bodycoat"></div>
+<div class="shirt"></div><div class="arm left">
+<div class="hand"></div>
+</div><div class="arm right">
+<div class="hand"></div>
+</div></div><div class="beaker">
+<div class="chemical"></div>
+<i></i><i></i><i></i>
+</div><div class="lab"></div></section></main></body>
 </html>

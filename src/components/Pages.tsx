@@ -15,9 +15,8 @@ export function HomePage({
       <section className="relative overflow-hidden rounded-[32px] border border-cyan-400/20">
         <img src={IMAGES.hero} alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-l from-[#05070d] via-[#05070d]/80 to-transparent" />
-        <div className="relative grid gap-8 p-8 lg:grid-cols-2 lg:p-14">
-          <div />
-          <div className="space-y-5">
+        <div className="relative grid gap-8 p-8 lg:grid-cols-[1.3fr_1fr] lg:p-14">
+          <div className="space-y-5 text-right">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-200">
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 pulse-glow" />
               اهلا بك في مختبري نورت المختبر كلو 🙂
@@ -40,6 +39,7 @@ export function HomePage({
               </button>
             </div>
           </div>
+          <div />
         </div>
       </section>
 

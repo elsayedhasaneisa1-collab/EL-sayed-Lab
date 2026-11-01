@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+@theme {
+  --font-cairo: "Cairo", "IBM Plex Sans Arabic", sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+  --color-lab: #05070d;
+  --color-cyan-glow: #22d3ee;
+  --color-amber-glow: #f59e0b;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #05070d;
+  color: #e2e8f0;
+  font-family: "Cairo", "IBM Plex Sans Arabic", sans-serif;
+  overflow-x: hidden;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #164e63 #0b1220;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0b1220;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #164e63, #0e7490);
+  border-radius: 99px;
+}
+
+.lab-grid {
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.78), rgba(8, 12, 24, 0.88));
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.glow-cyan {
+  box-shadow:
+    0 0 0 1px rgba(34, 211, 238, 0.25),
+    0 0 32px rgba(34, 211, 238, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.glow-amber {
+  box-shadow:
+    0 0 0 1px rgba(245, 158, 11, 0.28),
+    0 0 32px rgba(245, 158, 11, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(400%);
+  }
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-80px) scale(0.4);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2.8s ease-in-out infinite;
+}
+
+.formula-chip {
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: 0.04em;
+}
+
+.range-lab {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #083344, #22d3ee);
+  outline: none;
+}
+
+.range-lab::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ecfeff;
+  border: 2px solid #22d3ee;
+  box-shadow: 0 0 12px #22d3ee;
+  cursor: pointer;
+}
+
+.range-amber {
+  background: linear-gradient(90deg, #451a03, #f59e0b);
+}
+
+.range-amber::-webkit-slider-thumb {
+  border-color: #f59e0b;
+  box-shadow: 0 0 12px #f59e0b;
+}
+
+.element-cell {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.element-cell:hover {
+  transform: translateY(-3px) scale(1.06);
+  z-index: 5;
+  filter: brightness(1.15);
+}
+
+.scan-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-line::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  height: 40%;
+  background: linear-gradient(180deg, transparent, rgba(34, 211, 238, 0.08), transparent);
+  animation: scan 4.5s linear infinite;
+  pointer-events: none;
+}
